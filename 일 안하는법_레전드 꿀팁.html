@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일 안 하는 법</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: "궁서", "Gungsuh", serif;
+      padding: 30px;
+      background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
+      animation: rainbow 10s infinite alternate;
+      color: white;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    h1 {
+      font-size: 34px;
+      text-shadow: 2px 2px 5px black;
+      line-height: 1.5;
+    }
+
+    button {
+      padding: 14px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 8px;
+      border-radius: 12px;
+      border: none;
+      background-color: black;
+      color: white;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+      line-height: 1.8;
+      text-shadow: 1px 1px 3px black;
+      white-space: pre-line;
+    }
+
+    img {
+      margin-top: 15px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>일 안 하는 법</h1>
+
+  <div>
+    <button onclick="checkDay()">알아보기</button>
+    <button onclick="halfFifty()">나도 반백살</button>
+    <button onclick="whatEat()">오늘 뭐먹지</button>
+    <button onclick="sleepTime()">예윤이 몇시에 잘까</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function isHoliday(date) {
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+
+      const holidays = {
+        1: [1],
+        2: [16,17,18],
+        3: [1],
+        5: [1,5],
+        6: [6],
+        8: [15],
+        9: [24,25,26],
+        10: [3,9],
+        12: [25]
+      };
+
+      return holidays[month] && holidays[month].includes(day);
+    }
+
+    function checkDay() {
+      const now = new Date();
+      const koreaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
+
+      const day = koreaTime.getDay();
+      const dateStr = koreaTime.toLocaleDateString('ko-KR');
+
+      const resultDiv = document.getElementById("result");
+
+      let html = `<p><strong>${dateStr}</strong></p>`;
+
+      if (day === 0 || day === 6 || isHoliday(koreaTime)) {
+        html += `<p style="font-size:24px;">
+🎉 오늘 회사를 안 가시네요!!! 🎉\n
+축하드립니다 똥똥똥아빠 ㅋㅎ\n
+오늘은 먹고 자고 아무것도 안 해도 되는 날입니다^^\n
+이 행복도 얼마 안갈거에요 수고링 애옹애옹 애옹슨!
+</p>`;
+        html += `<img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">`;
+        html += `<img src="https://cdn-icons-png.flaticon.com/512/3468/3468373.png">`;
+      } else {
+        html += `<p style="font-size:24px;">
+어머... 평일이네요?ㅋㅎ\n
+출근 확정입니다 매니저님~~~~~~\n
+오늘도 수백 통 메일과 싸우시면서\n
+마케팅 전사로 거듭나시길 바랍니다^^\n
+오시리아역으로 오시리아!!\n
+롯데월드어드벤처부산에서 즐겁고 행복한 시간 보내시길 바랍니다 :))
+</p>`;
+
+        html += `
+<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+<img src="https://cdn-icons-png.flaticon.com/512/201/201623.png">
+<img src="https://cdn-icons-png.flaticon.com/512/869/869636.png">
+<img src="https://cdn-icons-png.flaticon.com/512/854/854878.png">
+`;
+      }
+
+      resultDiv.innerHTML = html;
+    }
+
+    // 나도 반백살
+    function halfFifty() {
+      const today = new Date();
+      const birth = new Date(1980, 10, 13); // 11월은 10
+
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+
+      // D-day 계산 (1999-07-07)
+      const start = new Date(1999, 6, 7);
+      const diffTime = today - start;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+      const resultDiv = document.getElementById("result");
+      let html = `
+<p><strong>${age}세</strong></p>
+<p style="font-size:24px;">야야야 내 나이가 어때서~</p>
+<p>❤️ 1999년 7월 7일부터 오늘까지 ${diffDays}일 ❤️</p>
+`;
+
+      resultDiv.innerHTML = html;
+    }
+
+    // 오늘 뭐먹지
+    function whatEat() {
+      const foods = [
+        "치킨","피자","햄버거","떡볶이","라면","김밥","삼겹살","돈까스","초밥","파스타",
+        "짜장면","짬뽕","탕수육","부대찌개","김치찌개","된장찌개","비빔밥","불고기","갈비","냉면",
+        "쌀국수","샌드위치","토스트","오므라이스","카레","닭갈비","곱창","막창","순대","순두부찌개",
+        "감자탕","해장국","설렁탕","칼국수","우동","튀김","핫도그","와플","팬케이크","아이스크림",
+        "빙수","샐러드","포케","스테이크","랍스터","새우튀김","회","물회","낙지볶음","쭈꾸미",
+        "닭발","보쌈","족발","전","잡채","토르티야","부리또","타코","퀘사디아","치즈볼",
+        "콘치즈","오징어볶음","제육볶음","계란말이","김치볶음밥","볶음밥","리조또","라자냐","마라탕","마라샹궈",
+        "꿔바로우","딤섬","훠궈","텐동","가츠동","규동","오니기리","타코야끼","우삼겹","닭강정",
+        "치즈돈까스","냉우동","비빔국수","잔치국수","핫케이크","프렌치토스트","베이글","크로플","에그타르트","도넛",
+        "케이크","초콜릿","젤라또","푸딩","요거트","그래놀라","컵밥","도시락"
+      ];
+
+      const randomFood = foods[Math.floor(Math.random() * foods.length)];
+
+      const resultDiv = document.getElementById("result");
+      let html = `
+<p style="font-size:28px;"><strong>${randomFood}</strong></p>
+<p>이거 먹고 100kg 가자!</p>
+`;
+
+      resultDiv.innerHTML = html;
+    }
+
+    // 예윤이 몇시에 잘까
+    function sleepTime() {
+      const hour = Math.floor(Math.random() * 5) + 22; // 22~26
+      const minute = Math.floor(Math.random() * 60);
+
+      let realHour = hour;
+      if (hour >= 24) realHour = hour - 24;
+
+      const resultDiv = document.getElementById("result");
+      let html = `
+<p style="font-size:26px;">
+${realHour}시 ${minute}분에 잔대.\n
+참고! 드렁슨드렁슨
+</p>
+`;
+
+      resultDiv.innerHTML = html;
+    }
+
+  </script>
+
+</body>
+</html>
