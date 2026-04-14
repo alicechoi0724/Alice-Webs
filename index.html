@@ -1,207 +1,133 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>일 안 하는 법</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: "궁서", "Gungsuh", serif;
-      padding: 30px;
-      background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 400% 400%;
-      animation: rainbow 10s infinite alternate;
-      color: white;
-    }
-
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    h1 {
-      font-size: 34px;
-      text-shadow: 2px 2px 5px black;
-      line-height: 1.5;
-    }
-
-    button {
-      padding: 14px 24px;
-      font-size: 18px;
-      cursor: pointer;
-      margin: 8px;
-      border-radius: 12px;
-      border: none;
-      background-color: black;
-      color: white;
-    }
-
-    #result {
-      margin-top: 30px;
-      font-size: 20px;
-      line-height: 1.8;
-      text-shadow: 1px 1px 3px black;
-      white-space: pre-line;
-    }
-
-    img {
-      margin-top: 15px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 15px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>BIGBANG 소개</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #fff8c6, #fff2a8);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #ffd700, #ffcc00);
+            padding: 25px;
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        section {
+            padding: 25px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #d4a017;
+            border-left: 6px solid #ffd700;
+            padding-left: 10px;
+        }
+        ul {
+            line-height: 1.9;
+        }
+        .member {
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>일 안 하는 법</h1>
+<header>내최애</header>
 
-  <div>
-    <button onclick="checkDay()">알아보기</button>
-    <button onclick="halfFifty()">나도 반백살</button>
-    <button onclick="whatEat()">오늘 뭐먹지</button>
-    <button onclick="sleepTime()">예윤이 몇시에 잘까</button>
-  </div>
+<section>
+    <h2>1. 서사 (History)</h2>
+    <p>
+        BIGBANG은 2006년 YG 엔터테인먼트에서 데뷔한 대한민국의 대표적인 보이그룹이다.
+        단순한 아이돌 그룹의 범주를 넘어, 음악성과 대중성을 동시에 잡은 혁신적인 팀으로 평가받는다.
+        데뷔 과정부터 서바이벌 형식으로 진행되며 멤버 개개인의 개성과 실력이 강조되었고,
+        이는 이후 그룹의 정체성을 형성하는 중요한 기반이 되었다.
+    </p>
+    <p>
+        초기에는 힙합 기반의 음악을 중심으로 활동했지만 점차 EDM, R&B, 팝 등 다양한 장르를 흡수하며
+        자신들만의 독창적인 사운드를 구축하였다. 특히 "거짓말"은 단순한 히트곡을 넘어
+        한국 대중음악 흐름 자체를 바꿨다는 평가를 받으며 BIGBANG을 정상급 그룹으로 끌어올렸다.
+    </p>
+    <p>
+        이후 "하루하루", "Fantastic Baby", "뱅뱅뱅" 등 시대를 대표하는 메가 히트곡을 연달아 발표하며
+        아시아를 넘어 글로벌 시장에서도 강한 존재감을 드러냈다. 월드투어, 해외 차트 성과,
+        그리고 수많은 팬덤을 통해 K-POP의 세계화를 이끈 선두주자로 자리매김하였다.
+    </p>
+    <p>
+        활동 공백기와 여러 변화를 겪으면서도, 그룹이 가진 상징성과 영향력은 여전히 강력하게 유지되고 있으며
+        "봄여름가을겨울"과 같은 곡을 통해 시간이 흘러도 변하지 않는 감성과 메시지를 전달하고 있다.
+    </p>
+</section>
 
-  <div id="result"></div>
+<section>
+    <h2>2. 멤버</h2>
+    <ul>
+        <li class="member"><b>G-DRAGON</b> - 리더, 래퍼, 프로듀서 (팀의 음악적 방향성을 이끄는 핵심 인물로, 작사·작곡·패션까지 전방위적인 영향력을 가진 아티스트)</li>
+        <li class="member"><b>TAEYANG</b> - 메인보컬 (소울풀한 음색과 폭발적인 가창력으로 그룹의 감성적인 부분을 담당하는 보컬리스트)</li>
+        <li class="member"><b>TOP</b> - 래퍼 (독특한 저음 톤과 카리스마 있는 무대로 강한 존재감을 보여주는 래퍼이자 배우)</li>
+        <li class="member"><b>DAESUNG</b> - 보컬 (안정적인 라이브와 밝은 에너지로 무대를 완성하는 보컬, 예능감까지 겸비한 올라운더)</li>
+        <li class="member"><b>DEFEAT</b> - 나가라</li>
+    </ul>
+    <p>
+        각 멤버는 뚜렷한 개성과 역할을 가지고 있으며, 단순히 하나의 팀이 아닌
+        "각자의 브랜드가 모인 집합체"라는 평가를 받을 정도로 개인 활동 또한 활발하다.
+        이러한 구조는 BIGBANG을 더욱 입체적이고 강력한 그룹으로 만든 핵심 요소이다.
+    </p>
+</section>
 
-  <script>
-    function isHoliday(date) {
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
+<section>
+    <h2>3. 대표곡</h2>
+    <ul>
+        <li>거짓말 (Lies)</li>
+        <li>하루하루 (Haru Haru)</li>
+        <li>Fantastic Baby</li>
+        <li>BANG BANG BANG</li>
+        <li>LOSER</li>
+        <li>우리 사랑하지 말아요</li>
+        <li>봄여름가을겨울 (Still Life)</li>
+    </ul>
+    <p>
+        BIGBANG의 음악은 단순히 유행을 따르는 것이 아니라, 오히려 트렌드를 만들어내는 방향으로 발전해왔다.
+        강렬한 퍼포먼스 중심 곡부터 감성적인 발라드까지 스펙트럼이 넓으며,
+        각 곡마다 시대의 분위기와 감정을 반영하고 있다.
+    </p>
+    <p>
+        특히 "BANG BANG BANG"과 "Fantastic Baby"는 전 세계 콘서트와 페스티벌에서
+        필수적으로 등장하는 곡으로, K-POP 퍼포먼스의 상징적인 트랙으로 자리 잡았다.
+    </p>
+</section>
 
-      const holidays = {
-        1: [1],
-        2: [16,17,18],
-        3: [1],
-        5: [1,5],
-        6: [6],
-        8: [15],
-        9: [24,25,26],
-        10: [3,9],
-        12: [25]
-      };
-
-      return holidays[month] && holidays[month].includes(day);
-    }
-
-    function checkDay() {
-      const now = new Date();
-      const koreaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
-
-      const day = koreaTime.getDay();
-      const dateStr = koreaTime.toLocaleDateString('ko-KR');
-
-      const resultDiv = document.getElementById("result");
-
-      let html = `<p><strong>${dateStr}</strong></p>`;
-
-      if (day === 0 || day === 6 || isHoliday(koreaTime)) {
-        html += `<p style="font-size:24px;">
-🎉 오늘 회사를 안 가시네요!!! 🎉\n
-축하드립니다 똥똥똥아빠 ㅋㅎ\n
-오늘은 먹고 자고 아무것도 안 해도 되는 날입니다^^\n
-이 행복도 얼마 안갈거에요 수고링 애옹애옹 애옹슨!
-</p>`;
-        html += `<img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">`;
-        html += `<img src="https://cdn-icons-png.flaticon.com/512/3468/3468373.png">`;
-      } else {
-        html += `<p style="font-size:24px;">
-어머... 평일이네요?ㅋㅎ\n
-출근 확정입니다 매니저님~~~~~~\n
-오늘도 수백 통 메일과 싸우시면서\n
-마케팅 전사로 거듭나시길 바랍니다^^\n
-오시리아역으로 오시리아!!\n
-롯데월드어드벤처부산에서 즐겁고 행복한 시간 보내시길 바랍니다 :))
-</p>`;
-
-        html += `
-<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-<img src="https://cdn-icons-png.flaticon.com/512/201/201623.png">
-<img src="https://cdn-icons-png.flaticon.com/512/869/869636.png">
-<img src="https://cdn-icons-png.flaticon.com/512/854/854878.png">
-`;
-      }
-
-      resultDiv.innerHTML = html;
-    }
-
-    // 나도 반백살
-    function halfFifty() {
-      const today = new Date();
-      const birth = new Date(1980, 10, 13); // 11월은 10
-
-      let age = today.getFullYear() - birth.getFullYear();
-      const m = today.getMonth() - birth.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-        age--;
-      }
-
-      // D-day 계산 (1999-07-07)
-      const start = new Date(1999, 6, 7);
-      const diffTime = today - start;
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-      const resultDiv = document.getElementById("result");
-      let html = `
-<p><strong>${age}세</strong></p>
-<p style="font-size:24px;">야야야 내 나이가 어때서~</p>
-<p>❤️ 1999년 7월 7일부터 오늘까지 ${diffDays}일 ❤️</p>
-`;
-
-      resultDiv.innerHTML = html;
-    }
-
-    // 오늘 뭐먹지
-    function whatEat() {
-      const foods = [
-        "치킨","피자","햄버거","떡볶이","라면","김밥","삼겹살","돈까스","초밥","파스타",
-        "짜장면","짬뽕","탕수육","부대찌개","김치찌개","된장찌개","비빔밥","불고기","갈비","냉면",
-        "쌀국수","샌드위치","토스트","오므라이스","카레","닭갈비","곱창","막창","순대","순두부찌개",
-        "감자탕","해장국","설렁탕","칼국수","우동","튀김","핫도그","와플","팬케이크","아이스크림",
-        "빙수","샐러드","포케","스테이크","랍스터","새우튀김","회","물회","낙지볶음","쭈꾸미",
-        "닭발","보쌈","족발","전","잡채","토르티야","부리또","타코","퀘사디아","치즈볼",
-        "콘치즈","오징어볶음","제육볶음","계란말이","김치볶음밥","볶음밥","리조또","라자냐","마라탕","마라샹궈",
-        "꿔바로우","딤섬","훠궈","텐동","가츠동","규동","오니기리","타코야끼","우삼겹","닭강정",
-        "치즈돈까스","냉우동","비빔국수","잔치국수","핫케이크","프렌치토스트","베이글","크로플","에그타르트","도넛",
-        "케이크","초콜릿","젤라또","푸딩","요거트","그래놀라","컵밥","도시락"
-      ];
-
-      const randomFood = foods[Math.floor(Math.random() * foods.length)];
-
-      const resultDiv = document.getElementById("result");
-      let html = `
-<p style="font-size:28px;"><strong>${randomFood}</strong></p>
-<p>이거 먹고 100kg 가자!</p>
-`;
-
-      resultDiv.innerHTML = html;
-    }
-
-    // 예윤이 몇시에 잘까
-    function sleepTime() {
-      const hour = Math.floor(Math.random() * 5) + 22; // 22~26
-      const minute = Math.floor(Math.random() * 60);
-
-      let realHour = hour;
-      if (hour >= 24) realHour = hour - 24;
-
-      const resultDiv = document.getElementById("result");
-      let html = `
-<p style="font-size:26px;">
-${realHour}시 ${minute}분에 잔대.\n
-참고! 드렁슨드렁슨
-</p>
-`;
-
-      resultDiv.innerHTML = html;
-    }
-
-  </script>
+<section>
+    <h2>4. 특징</h2>
+    <p>
+        BIGBANG은 기존 아이돌 시스템과 차별화된 "아티스트형 아이돌"의 대표적인 사례이다.
+        멤버들이 직접 음악 제작에 참여하며 자신들의 이야기를 담아내는 점이 가장 큰 특징이다.
+    </p>
+    <p>
+        특히 G-DRAGON을 중심으로 한 프로듀싱 능력은 그룹의 정체성을 확립하는 데 결정적인 역할을 했으며,
+        이는 후배 아티스트들에게도 큰 영향을 미쳤다.
+    </p>
+    <p>
+        또한 패션, 문화, 공연 연출 등 다양한 영역에서 트렌드를 선도하며
+        단순한 음악 그룹을 넘어 하나의 "문화 아이콘"으로 자리 잡았다.
+        그들의 무대는 음악을 넘어 하나의 쇼이자 경험으로 평가된다.
+    </p>
+    <p>
+        시간이 지나도 여전히 회자되는 영향력, 그리고 세대를 초월한 팬층은
+        BIGBANG이 단순한 인기 그룹이 아닌 "전설"로 불리는 이유를 보여준다.
+    </p>
+</section>
 
 </body>
 </html>
